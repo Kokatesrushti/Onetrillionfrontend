@@ -16,7 +16,7 @@ function AllRoutes() {
         <Route path='/upload' element={<Upload />} />
         <Route path='/export' element={<Export />} />
         <Route path='/campign' element={<Campign/>} />
-        <Route path='/autopilot' element={<Autopilot />} />
+        <Route path="/autopilot" element={<Autopilot />} />
     </Routes>
   )
 }
