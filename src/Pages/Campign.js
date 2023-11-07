@@ -1,226 +1,153 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Badge from "../Images/badge.png"
 
 function Campign() {
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
-  const [numWords, setNumWords] = useState(0);
-  const [bidAggression, setBidAggression] = useState(50);
-
-  const handleToggleChange = () => {
-    setIsSwitchOn(!isSwitchOn);
-  };
-
-  const handleNumWordsChange = (e) => {
-    const value = parseFloat(e.target.value);
-    setNumWords(value);
-  };
-
-  const handleBidAggressionChange = (e) => {
-    const value = parseFloat(e.target.value);
-    setBidAggression(value);
-  };
-
   return (
-    <div className="flex flex-grow mt-2">
-      <div className="flex flex-col w-full p-6 bg-white rounded-lg shadow-lg shadow-stone-400 m-10">
-        <div className="flex space-x-2">
-          <p>Add new optimal keywords</p>
-          <div className="flex items-center">
-            <input
-              className="mr-2 mt-[0.3rem] h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-neutral-300 before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-neutral-100 after:shadow-[0 0px 3px 0 rgba(0,0,0,0.7), 0 2px 2px 0 rgba(0,0,0,0.4)] after:transition-[background-color 0.2s, transform 0.2s] after:content-[''] checked:bg-primary checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-primary checked:after:shadow-[0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)] checked:after:transition-[background-color 0.2s, transform 0.2s] checked:after:content-[''] hover:cursor-pointer focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px -1px 0px 13px rgba(0,0,0,0.6)] focus:before:transition-[box-shadow 0.2s, transform 0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px -1px 0px 13px #3b71ca] checked:focus:before:transition-[box-shadow 0.2s, transform 0.2s] dark:bg-blue-600 dark:after:bg-white-400 dark:checked:bg-primary dark:checked:after:bg-primary dark:focus:before:shadow-[3px -1px 0px 13px rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[3px -1px 0px 13px #3b71ca]"
-              type="checkbox"
-              role="switch"
-              id="flexSwitchCheckDefault"
-              checked={isSwitchOn}
-              onChange={handleToggleChange}
-            />
-          </div>
+    <div className="container bg-white mx-auto p-2">
+      <div className="flex flex-col max-w-7xl p-6 bg-white rounded-lg shadow-lg shadow-stone-400 m-10 mr-20">
+        <div className="flex flex-row gap-2">
+          <button className="p-4 bg-green-400 rounded-lg mr-4 font-semibold">
+            Create Campign
+          </button>
+          <Link to="/autopilot">
+            <button className="p-4 bg-green-400 rounded-lg mr-4 font-semibold">
+              Autopilot
+            </button>
+          </Link>
         </div>
-        {isSwitchOn && (
-          <div className="mt-4">
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="numWordsSlider">No. of Words</label>
-              <div className="ml-20">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="BidAggression"> No. of Keywords Bid Aggression</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-         
-          </div>
-        )}
 
-
-        <hr />
-
-        <div className="flex space-x-2 mt-4">
-          <p>Add new optimal keywords</p>
-          <div className="flex items-center">
-            <input
-              className="mr-2 mt-[0.3rem] h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-neutral-300 before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-neutral-100 after:shadow-[0 0px 3px 0 rgba(0,0,0,0.7), 0 2px 2px 0 rgba(0,0,0,0.4)] after:transition-[background-color 0.2s, transform 0.2s] after:content-[''] checked:bg-primary checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-primary checked:after:shadow-[0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)] checked:after:transition-[background-color 0.2s, transform 0.2s] checked:after:content-[''] hover:cursor-pointer focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px -1px 0px 13px rgba(0,0,0,0.6)] focus:before:transition-[box-shadow 0.2s, transform 0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px -1px 0px 13px #3b71ca] checked:focus:before:transition-[box-shadow 0.2s, transform 0.2s] dark:bg-neutral-600 dark:after:bg-neutral-400 dark:checked:bg-primary dark:checked:after:bg-primary dark:focus:before:shadow-[3px -1px 0px 13px rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[3px -1px 0px 13px #3b71ca]"
-              type="checkbox"
-              role="switch"
-              id="flexSwitchCheckDefault"
-              checked={isSwitchOn}
-              onChange={handleToggleChange}
-            />
-          </div>
-        </div>
-        {isSwitchOn && (
-          <div className="mt-4">
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="numWordsSlider">Top Customer Search Terms</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="BidAggression"> No. of Keywords Bid Aggression</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="BidAggression">Boost Bids on Peak Days</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="BidAggression"> Lowers Bids on Peak Days</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-
-
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="BidAggression">Lowers Bids on slow Days</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="BidAggression">Boost bids during peak hours</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-
-            <div className="mb-3 flex flex-row items-center">
-              
-              <label htmlFor="BidAggression">Lower Bids During Off peak hours</label>
-              <div className="ml-12">
-              <p className="text-left ml-12">{numWords.toFixed(0)}%</p>
-              <input
-                type="range"
-                id="numWordsSlider"
-                min="0"
-                max="100"
-                value={numWords}
-                onChange={handleNumWordsChange}
-                className="slider"
-              />
-              </div>
-             
-            </div>
-         
-          </div>
-        )}
-        
+        <table className="w-full border-collapse border self-center mt-10 text-center">
+          <thead>
+            <tr>
+              <th className="border border-slate-700 p-2">Campaign Name</th>
+              <th className="border border-slate-700 p-2">Actions</th>
+              <th className="border border-slate-700 p-2">Autopilot</th>
+              <th className="border border-slate-700 p-2">Intelli Score</th>
+              <th className="border border-slate-700 p-2">Targeting</th>
+              <th className="border border-slate-700 p-2">Daily Budget</th>
+              <th className="border border-slate-700 p-2">Spend</th>
+              <th className="border border-slate-700 p-2">Units</th>
+              <th className="border border-slate-700 p-2">Sell</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border border-slate-700">hvrkjrekmybvehrntk</td>
+              <td className="border border-slate-700">
+                <input type="checkbox"></input>
+              </td>
+              <td className="border border-slate-700 tetx-center">
+                <img src={Badge} alt=""  className="max-h-10 ml-6"/>
+              </td>
+              <td className="border border-slate-700">
+                <div class="w-48 h-3 relative rounded-md overflow-hidden ml-5">
+                  <div class="h-full w-full absolute z-0 bg-gradient-to-r from-red-500 via-orange-500 to-violet-500"></div>
+                </div>
+              </td>
+              <td className="border border-slate-700">Manual</td>
+              <td className="border border-slate-700">$50.00</td>
+              <td className="border border-slate-700">$410.00</td>
+              <td className="border border-slate-700">$430.00</td>
+              <td className="border border-slate-700">$500.00</td>
+            </tr>
+            <tr>
+              <td className="border border-slate-700">bjrjktkymymmu</td>
+              <td className="border border-slate-700">
+                <input type="checkbox"></input>
+              </td>
+              <td className="border border-slate-700 tetx-center">
+                <img src={Badge} alt=""  className="max-h-10 ml-6"/>
+              </td>
+              <td className="border border-slate-700">
+                <div class="w-48 h-3 relative rounded-md overflow-hidden ml-5">
+                  <div class="h-full w-full absolute z-0 bg-gradient-to-r from-red-500 via-orange-500 to-violet-500"></div>
+                </div>
+              </td>
+              <td className="border border-slate-700">Automatic</td>
+              <td className="border border-slate-700">$50.00</td>
+              <td className="border border-slate-700">$510.00</td>
+              <td className="border border-slate-700">$430.00</td>
+              <td className="border border-slate-700">$700.00</td>
+            </tr>
+            <tr>
+              <td className="border border-slate-700">hvrbbthynm</td>
+              <td className="border border-slate-700">
+                <input type="checkbox"></input>
+              </td>
+              <td className="border border-slate-700 tetx-center">
+                <img src={Badge} alt=""  className="max-h-10 ml-6"/>
+              </td>
+              <td className="border border-slate-700">
+                <div class="w-48 h-3 relative rounded-md overflow-hidden ml-5">
+                  <div class="h-full w-full absolute z-0 bg-gradient-to-r from-red-500 via-orange-500 to-violet-500"></div>
+                </div>
+              </td>
+              <td className="border border-slate-700">Manual</td>
+              <td className="border border-slate-700">$50.00</td>
+              <td className="border border-slate-700">$490.00</td>
+              <td className="border border-slate-700">$530.00</td>
+              <td className="border border-slate-700">$500.00</td>
+            </tr>
+            <tr>
+              <td className="border border-slate-700">nnnrhtjkykk</td>
+              <td className="border border-slate-700">
+                <input type="checkbox"></input>
+              </td>
+              <td className="border border-slate-700 tetx-center">
+                <img src={Badge} alt=""  className="max-h-10 ml-6"/>
+              </td>
+              <td className="border border-slate-700">
+                <div class="w-48 h-3 relative rounded-md overflow-hidden ml-5">
+                  <div class="h-full w-full absolute z-0 bg-gradient-to-r from-red-500 via-orange-500 to-violet-500"></div>
+                </div>
+              </td>
+              <td className="border border-slate-700">Manual</td>
+              <td className="border border-slate-700">$50.00</td>
+              <td className="border border-slate-700">$500.00</td>
+              <td className="border border-slate-700">$630.00</td>
+              <td className="border border-slate-700">$500.00</td>
+            </tr>
+            <tr>
+              <td className="border border-slate-700">vdnrnmtky </td>
+              <td className="border border-slate-700">
+                <input type="checkbox"></input>
+              </td>
+              <td className="border border-slate-700 tetx-center">
+                <img src={Badge} alt=""  className="max-h-10 ml-6"/>
+              </td>
+              <td className="border border-slate-700">
+                <div class="w-48 h-3 relative rounded-md overflow-hidden ml-5">
+                  <div class="h-full w-full absolute z-0 bg-gradient-to-r from-red-500 via-orange-500 to-violet-500"></div>
+                </div>
+              </td>
+              <td className="border border-slate-700">Automatic</td>
+              <td className="border border-slate-700">$100.00</td>
+              <td className="border border-slate-700">$410.00</td>
+              <td className="border border-slate-700">$700.00</td>
+              <td className="border border-slate-700">$400.00</td>
+            </tr>
+            <tr>
+              <td className="border border-slate-700">pklbegry</td>
+              <td className="border border-slate-700">
+                <input type="checkbox"></input>
+              </td>
+              <td className="border border-slate-700 tetx-center">
+                <img src={Badge} alt=""  className="max-h-10 ml-6"/>
+              </td>
+              <td className="border border-slate-700">
+                <div class="w-48 h-3 relative rounded-md overflow-hidden ml-5">
+                  <div class="h-full w-full absolute z-0 bg-gradient-to-r from-red-500 via-orange-500 to-violet-500"></div>
+                </div>
+              </td>
+              <td className="border border-slate-700">Manual</td>
+              <td className="border border-slate-700">$80.00</td>
+              <td className="border border-slate-700">$710.00</td>
+              <td className="border border-slate-700">$500.00</td>
+              <td className="border border-slate-700">$600.00</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Upload from './Pages/Upload';
 import Dashboard from './Pages/Dashboard';
 import Export from './Pages/Export';
 import Campign from './Pages/Campign';
+import Autopilot from './components/Autopilot';
 function AllRoutes() {
   return (
     <Routes >
@@ -15,6 +16,7 @@ function AllRoutes() {
         <Route path='/upload' element={<Upload />} />
         <Route path='/export' element={<Export />} />
         <Route path='/campign' element={<Campign/>} />
+        <Route path='/autopilot' element={<Autopilot />} />
     </Routes>
   )
 }
