@@ -21,104 +21,136 @@ const optionData = {
   "Inventory Summary": [
     {
       heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      paragraph1: "IN-STOCK SKUS",
+      paragraph2: "IN-STOCK UNITS.",
+      amount1:535,
+      amount2:37368,
       imageURL: stock,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      heading: "INVENTORY VALUE",
+      paragraph1: "RETAIL VALUE",
+      paragraph2: "COST OF GOODS",
+      amount1:970907.31,
+      amount2:79374.42,
+      imageURL: shipping,
+    },
+    {
+      heading: "UNITS SHIPPED",
+      paragraph1: "QUANTITY SHIPPED",
+      paragraph2: "QUANTITY RETURNED",
+      amount1:24651,
+      amount2:445,
       imageURL: stock,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: stock,
-    },
-    {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: stock,
+      heading: "COST OF GOODS SOLD",
+      paragraph1: "UNIT COST",
+      paragraph2: "INBOUND SHIPPING",
+      amount1:-33804.27,
+      amount2:-48.30,
+      imageURL: shipping,
     },
   ],
   "Not Promoted": [
     {
       heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      paragraph1: "IN-STOCK SKUS",
+      paragraph2: "IN-STOCK UNITS.",
+      amount1:535,
+      amount2:37368,
       imageURL: stock,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      heading: "INVENTORY VALUE",
+      paragraph1: "RETAIL VALUE",
+      paragraph2: "COST OF GOODS",
+      amount1:970907.31,
+      amount2:79374.42,
+      imageURL: shipping,
+    },
+    {
+      heading: "UNITS SHIPPED",
+      paragraph1: "QUANTITY SHIPPED",
+      paragraph2: "QUANTITY RETURNED",
+      amount1:24651,
+      amount2:445,
       imageURL: stock,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: stock,
-    },
-    {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: stock,
+      heading: "COST OF GOODS SOLD",
+      paragraph1: "UNIT COST",
+      paragraph2: "INBOUND SHIPPING",
+      amount1:-33804.27,
+      amount2:-48.30,
+      imageURL: shipping,
     },
   ],
   "Best Performing": [
     {
       heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      paragraph1: "IN-STOCK SKUS",
+      paragraph2: "IN-STOCK UNITS.",
+      amount1:535,
+      amount2:37368,
+      imageURL: stock,
+    },
+    {
+      heading: "INVENTORY VALUE",
+      paragraph1: "RETAIL VALUE",
+      paragraph2: "COST OF GOODS",
+      amount1:970907.31,
+      amount2:79374.42,
       imageURL: shipping,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: shipping,
+      heading: "UNITS SHIPPED",
+      paragraph1: "QUANTITY SHIPPED",
+      paragraph2: "QUANTITY RETURNED",
+      amount1:24651,
+      amount2:445,
+      imageURL: stock,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: shipping,
-    },
-    {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      heading: "COST OF GOODS SOLD",
+      paragraph1: "UNIT COST",
+      paragraph2: "INBOUND SHIPPING",
+      amount1:-33804.27,
+      amount2:-48.30,
       imageURL: shipping,
     },
   ],
   "Worst Performing": [
     {
       heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      paragraph1: "IN-STOCK SKUS",
+      paragraph2: "IN-STOCK UNITS.",
+      amount1:535,
+      amount2:37368,
+      imageURL: stock,
+    },
+    {
+      heading: "INVENTORY VALUE",
+      paragraph1: "RETAIL VALUE",
+      paragraph2: "COST OF GOODS",
+      amount1:970907.31,
+      amount2:79374.42,
       imageURL: shipping,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: shipping,
+      heading: "UNITS SHIPPED",
+      paragraph1: "QUANTITY SHIPPED",
+      paragraph2: "QUANTITY RETURNED",
+      amount1:24651,
+      amount2:445,
+      imageURL: stock,
     },
     {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
-      imageURL: shipping,
-    },
-    {
-      heading: "IN-STOCK INVENTORY",
-      paragraph1: "First paragraph for Card A1.",
-      paragraph2: "Second paragraph for Card A1.",
+      heading: "COST OF GOODS SOLD",
+      paragraph1: "UNIT COST",
+      paragraph2: "INBOUND SHIPPING",
+      amount1:-33804.27,
+      amount2:-48.30,
       imageURL: shipping,
     },
   ],
@@ -138,10 +170,17 @@ const selectedData = optionData[selectedOption];
 if (selectedData) {
   return selectedData.map((card, index) => (
     <div key={index} className="bg-white p-4 rounded shadow">
-      <img src={card.imageURL} alt="Card Image" className="w-10 h-10 mb-2" />
+      <div className='flex justify-center'><img src={card.imageURL} alt="Card Image" className="w-10 h-10 mb-2" /></div>
       <h2 className="text-xl font-bold mb-2">{card.heading}</h2>
-      <p>{card.paragraph1}</p>
-      <p>{card.paragraph2}</p>
+      <div className='flex items-center gap-2'>
+        <div className='rounded-full h-3 w-3 bg-green-500'></div>
+        <div className='flex justify-between gap-5'><p>{card.paragraph1}</p><p >{card.amount1}</p></div>
+      </div>
+
+      <div className='flex items-center gap-2'>
+        <div className='rounded-full h-3 w-3 bg-pink-500'></div>
+        <div className='flex justify-between gap-5'><p>{card.paragraph2}</p><p>{card.amount2}</p></div>
+      </div>
     </div>
   ));
 }

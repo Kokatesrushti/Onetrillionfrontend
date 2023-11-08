@@ -7,8 +7,8 @@ const CardDisplay = ({ cards }) => {
       <div key={index} className="bg-white p-4 rounded shadow">
         <img src={card.imageURL} alt="iamge" className="w-10 h-10"/>
         <h2 className="text-xl font-bold mb-2">{card.heading}</h2>
-        <p>{card.paragraph1}</p>
-        <p>{card.paragraph2}</p>
+        <p>{card.paragraph1}</p><p>{card.amount1}</p>
+        <p>{card.paragraph2}</p><p>{card.amount2}</p>
       </div>
     ))}
   </div>
