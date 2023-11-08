@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Graph from '../components/Graph';
 
 function Upload() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -70,6 +71,7 @@ function Upload() {
         <h2 className="text-xl font-semibold mb-2">Sample CSV Format:</h2>
         <img src="/path-to-sample-image.jpg" alt="Sample CSV Format" />
       </div>
+
     </div>
   );
 }

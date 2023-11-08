@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import TrueProfit from './TrueProfit'
+import Graph from '../components/Graph';
 
 // import LineChart from '../components/LineChart';
 
@@ -8,27 +9,8 @@ import TrueProfit from './TrueProfit'
 
 
 function Dashboard() {
-
-  const chartData = {
-    labels: ['2016', '2017', '2018', '2019', '2020'],
-    datasets: [
-      {
-        label: 'Users Gained',
-        data: [100, 200, 300, 250, 400],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1, // Adjust the curve tension as needed
-      },
-    ],
-  };
-  
-  
- 
-  
-  
   return (
-    <div className="container bg-white mx-auto p-2">
-      <div className="flex flex-row">
+    <div className="container bg-white mx-auto p-2 flex flex-row">
       <div className="flex flex-col max-w-7xl p-6 bg-white rounded-md shadow-md shadow-stone-400 m-10 mr-20">
  
 
@@ -91,11 +73,11 @@ function Dashboard() {
          
         </div>
 
-        {/* <div>
-        <LineChart chartData={chartData} />
-        </div> */}
-
       </div>
+
+  
+         {/* <Graph /> */}
+       
 
       
       </div>
@@ -104,9 +86,9 @@ function Dashboard() {
       <TrueProfit />
       </div>
 
-      </div>
+      
 
-    </div>
+      </div>
   )
 }
 
