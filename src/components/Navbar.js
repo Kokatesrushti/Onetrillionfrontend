@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="bg-black p-4 w-60 min-h-screen">
       <div className="container mx-auto flex flex-col justify-between">
-        <a href="/" className="text-white text-2xl font-semibold mb-5">
+        <a href="/dashboard" className="text-white text-2xl font-semibold mb-5">
           <img src={Mauli} alt="Mauli" width="150px" height="auto" className="ml-5"></img>
         </a>
 
