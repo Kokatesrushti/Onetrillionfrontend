@@ -33,7 +33,7 @@ const Graph = () => {
   return (
     <div>
       <ResponsiveContainer width="100%" aspect={3}>
-        <LineChart data={data} width={500} height={300} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <LineChart data={data} width={500} height={300} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
